@@ -5,7 +5,7 @@ shopt -s extglob
 NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
 
 #Pattern for Email address
-EMAIL_PATTERN="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
+EMAIL_PATTERN="^[a-z0-9]{1,}([.|_|+|-]?[a-z0-9]+)?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,4}([.]{1}[a-z]{2})?$"
 
 #Pattern for Mobile Number
 MOBILE_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
