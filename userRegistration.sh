@@ -23,6 +23,6 @@ checkValidation $firstName $namePattern
 read -p "Enter your Last name: " lastName
 checkValidation $lastName $namePattern
 
-read -p "Enter your Email: " email
-checkValidation $email $emailPattern
+read -p "Enter your Email: " emailAddress
+checkValidation $emailAddress $emailPattern
 
