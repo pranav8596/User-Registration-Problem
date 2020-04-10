@@ -1,8 +1,11 @@
 #!/bin/bash -x
 shopt -s extglob
 
-#Pattern for First name
-namePattern=^[A-Z]{1}[a-z]{3,}$
+#Pattern for First name and Last name
+namePattern="^[A-Z]{1}[a-z]{3,}$"
+
+#Pattern for Email address
+emailPattern="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
 
 #To check Validation for User entries
 function checkValidation() {
@@ -19,3 +22,7 @@ checkValidation $firstName $namePattern
 
 read -p "Enter your Last name: " lastName
 checkValidation $lastName $namePattern
+
+read -p "Enter your Email: " email
+checkValidation $email $emailPattern
+
