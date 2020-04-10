@@ -14,7 +14,10 @@ mobilePattern="^[0-9]{1,3}[ ][0-9]{10}$"
 passwordPattern="^[a-z]{8,}$"
 
 #Pattern for Password Rule 2: Atleast one upper case letter and Rule 1
-passwordPattern="^(?=.*[A-Z])[a-zA-Z]{7,}$"
+passwordPattern="^(?=.*[A-Z])[a-zA-Z]{8,}$"
+
+#Pattern for Password Rule 3: Atleast 1 numeric number and Rule 2
+passwordPattern="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$"
 
 #To check Validation for User entries
 function checkValidation() {
