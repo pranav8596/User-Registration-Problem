@@ -5,7 +5,7 @@ shopt -s extglob
 namePattern="^[A-Z]{1}[a-z]{3,}$"
 
 #Pattern for Email address
-emailPattern="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
+emailPattern=^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$
 
 #To check Validation for User entries
 function checkValidation() {
