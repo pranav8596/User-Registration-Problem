@@ -7,6 +7,9 @@ namePattern="^[A-Z]{1}[a-z]{3,}$"
 #Pattern for Email address
 emailPattern="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
 
+#Pattern for Mobile Number
+mobilePattern="^[0-9]{1,3}[ ][0-9]{10}$"
+
 #To check Validation for User entries
 function checkValidation() {
 	if [[ $1 =~ $2 ]]
@@ -26,3 +29,5 @@ checkValidation $lastName $namePattern
 read -p "Enter your Email: " emailAddress
 checkValidation $emailAddress $emailPattern
 
+read -p "Enter your Mobile number: " mobileNumber
+checkValidation "$mobileNumber" "$mobilePattern"
