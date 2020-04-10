@@ -2,22 +2,25 @@
 shopt -s extglob
 
 #Pattern for First name and Last name
-namePattern="^[A-Z]{1}[a-z]{3,}$"
+NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
 
 #Pattern for Email address
-emailPattern="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
+EMAIL_PATTERN="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{2,4}([.][A-Za-z]{2,4}+)?$"
 
 #Pattern for Mobile Number
-mobilePattern="^[0-9]{1,3}[ ][0-9]{10}$"
+MOBILE_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
 
 #Pattern for Password Rule 1: Minimum 8 chracters
-passwordPattern="^[a-z]{8,}$"
+PASSWORD_PATTERN="^[a-z]{8,}$"
 
 #Pattern for Password Rule 2: Atleast one upper case letter and Rule 1
-passwordPattern="^(?=.*[A-Z])[a-zA-Z]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z])[a-zA-Z]{8,}$"
 
 #Pattern for Password Rule 3: Atleast 1 numeric number and Rule 2
-passwordPattern="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$"
+
+#Pattern for Password Rule 4: Exact 1 special character and Rule 3
+PASSWORD_PATTERN="^(?=.*[@#$%!])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9@#$%!]{8,}$"
 
 #To check Validation for User entries
 function checkValidation() {
@@ -30,16 +33,16 @@ function checkValidation() {
 }
 
 read -p "Enter your First name: " firstName
-checkValidation $firstName $namePattern
+checkValidation $firstName $NAME_PATTERN
 
 read -p "Enter your Last name: " lastName
-checkValidation $lastName $namePattern
+checkValidation $lastName $NAME_PATTERN
 
 read -p "Enter your Email: " emailAddress
-checkValidation $emailAddress $emailPattern
+checkValidation $emailAddress $EMAIL_PATTERN
 
 read -p "Enter your Mobile number: " mobileNumber
-checkValidation "$mobileNumber" "$mobilePattern"
+checkValidation "$mobileNumber" "$MOBILE_PATTERN"
 
 read -p "Enter your Password: " password
-checkValidation $password $passwordPattern
+checkValidation $password $PASSWORD_PATTERN
