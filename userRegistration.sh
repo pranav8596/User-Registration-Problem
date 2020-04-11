@@ -2,13 +2,13 @@
 shopt -s extglob
 
 #Pattern for First name and Last name
-NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
+NAME_PATTERN="^[A-Z]{1}[a-z]{2,}$"
 
 #Pattern for Email address
 EMAIL_PATTERN="^[a-z0-9]{1,}([.|_|+|-]?[a-z0-9]+)?[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,4}([.]{1}[a-z]{2})?$"
 
 #Pattern for Mobile Number
-MOBILE_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
+MOBILE_PATTERN="^[0-9]{1,3}[ ]?[0-9]{10}$"
 
 #Pattern for Password Rule 1: Minimum 8 chracters
 PASSWORD_PATTERN="^[a-z]{8,}$"
@@ -20,7 +20,7 @@ PASSWORD_PATTERN="^(?=.*[A-Z])[a-zA-Z]{8,}$"
 PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$"
 
 #Pattern for Password Rule 4: Exact 1 special character and Rule 3
-PASSWORD_PATTERN="^(?=.*[@#$%!])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9@#$%!]{8,}$"
+PASSWORD_PATTERN="^(?=[^@|#|$|%|!|&]*[@|#|$|%|!|&][^@|#|$|%|!|&]*$)(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9@#$%!&]{8,}$"
 
 #To check Validation for User entries
 function checkValidation() {
